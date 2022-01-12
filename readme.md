@@ -1,28 +1,30 @@
-# @fika/gatsby-source-cockpit
+# @tdukart/gatsby-source-cockpit
 
-This is a Gatsby version 2.\*.\* source plugin that feeds the GraphQL tree with Cockpit Headless CMS collections and singletons data.
+This is a fork of the apparently abandoned [@fika/gatsby-source-cockpit](https://github.com/fikaproductions/fika-gatsby-source-cockpit) to introduce support for Gatsby 4.x and fix a few bugs.
 
-Actually, it supports querying raw texts (and any trivial field types), Markdown, images, galleries, assets, sets, repeaters, layout(-grid)s (currently only without nested images/assets), objects, linked collections and internationalization.
+NOTE: This fork is a side project of a single person and is likely buggy. I'll do my best to work out bugs. Contributions are welcome!
+
+NOTE 2: I am not a Fika Productions employee. There are a few mentions of their trademarks in here, but are intended as reference.
 
 ## Installation
 
 ```
-npm install --save @fika/gatsby-source-cockpit
+npm install --save @tdukart/gatsby-source-cockpit
 ```
 
-This project has `gatsby-source-filesystem`, `gatsby` and `react` as peer dependencies, don't forget to install them as well.
+This project has `gatsby-source-filesystem` as a peer dependency, so don't forget to install it as well. (Assuming you already have Gatsby and React.)
 
 ```
-npm install --save gatsby-source-filesystem gatsby react
+npm install --save gatsby-source-filesystem
 ```
 
 ## Contributing
 
-1. Fork main project on github [here](https://github.com/fikaproductions/fika-gatsby-source-cockpit).
+1. Fork main project on github [here](https://github.com/tdukart/fika-gatsby-source-cockpit).
 2. Clone your fork.
 3. Create a new branch on your local fork.
 4. Commit and push your changes on this branch.
-5. Create a pull request on the main project by going [here](https://github.com/fikaproductions/fika-gatsby-source-cockpit/compare), click on "compare across forks" and select your own branch in the "head fork" section.
+5. Create a pull request on the main project by going [here](https://github.com/tdukart/fika-gatsby-source-cockpit/compare), click on "compare across forks" and select your own branch in the "head fork" section.
 6. Compare changes and submit pull request.
 
 ### Tips and tricks
@@ -34,7 +36,7 @@ While developing a GatsbyJS source plugin, it is useful to have a GatsbyJS proje
 npm link
 
 // In the GatsbyJS project's folder
-npm link @fika/gatsby-source-cockpit
+npm link @tdukart/gatsby-source-cockpit
 ```
 
 You'll have to install the plugin's peer dependencies in the plugin's folder as well (without saving them):
@@ -46,7 +48,7 @@ npm install --no-save gatsby react
 Then, in order to unlink the local plugin and use the one from NPM again:
 
 ```
-npm uninstall --no-save @fika/gatsby-source-cockpit
+npm uninstall --no-save @tdukart/gatsby-source-cockpit
 npm install
 ```
 
@@ -64,7 +66,7 @@ plugins: [
     },
   },
   {
-    resolve: '@fika/gatsby-source-cockpit',
+    resolve: '@tdukart/gatsby-source-cockpit',
     options: {
       token: 'YOUR_COCKPIT_API_TOKEN',
       baseUrl:
@@ -445,4 +447,4 @@ E.g.
 
 ---
 
-## Powered by &nbsp; — &nbsp;&nbsp; <a href="https://www.fikaproductions.com"><img align="center" width="200" height="200" src="src/images/logo.png"></a>
+## Original plugin powered by &nbsp; — &nbsp;&nbsp; <a href="https://www.fikaproductions.com"><img align="center" width="200" height="200" src="src/images/logo.png"></a>
