@@ -1,6 +1,6 @@
 {
   "name": "@tdukart/gatsby-source-cockpit",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "Gatsby source plugin for the Cockpit Headless CMS.",
   "main": "gatsby-node.js",
   "scripts": {
