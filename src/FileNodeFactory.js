@@ -16,27 +16,37 @@ module.exports = class FileNodeFactory {
   }
 
   async createImageNode(path) {
-    const imageNode = await createRemoteFileNode({
-      url: path,
-      store: this.store,
-      cache: this.cache,
-      createNode: this.createNode,
-      createNodeId: () => generateNodeId('Image', `${hash(path)}`),
-    })
+    try {
+      const imageNode = await createRemoteFileNode({
+        url: path,
+        store: this.store,
+        cache: this.cache,
+        createNode: this.createNode,
+        createNodeId: () => generateNodeId('Image', `${hash(path)}`),
+      })
 
-    return this.checkIfDownloadIsSuccessful(path, imageNode)
+      return this.checkIfDownloadIsSuccessful(path, imageNode)
+    } catch (err) {
+      console.error(`Error creating image node: ${err}`)
+      return null
+    }
   }
 
   async createAssetNode(path) {
-    const assetNode = await createRemoteFileNode({
-      url: path,
-      store: this.store,
-      cache: this.cache,
-      createNode: this.createNode,
-      createNodeId: () => generateNodeId('Asset', `${hash(path)}`),
-    })
+    try {
+      const assetNode = await createRemoteFileNode({
+        url: path,
+        store: this.store,
+        cache: this.cache,
+        createNode: this.createNode,
+        createNodeId: () => generateNodeId('Asset', `${hash(path)}`),
+      })
 
-    return this.checkIfDownloadIsSuccessful(path, assetNode)
+      return this.checkIfDownloadIsSuccessful(path, assetNode)
+    } catch (err) {
+      console.error(`Error creating asset node: ${err}`)
+      return null
+    }
   }
 
   checkIfDownloadIsSuccessful(path, fileNode) {
